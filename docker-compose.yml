@@ -1,7 +1,12 @@
-version: '3.8'
+version: '3.3'
 
 services:
-  medusa:
-    build: .
+  app:
+    container_name: 'Procurmate_Backend'
+    build:
+      context: .
+      dockerfile: Dockerfile  # Specify the Dockerfile to use
     ports:
       - "9000:9000"
+    volumes:
+     - .:/app
